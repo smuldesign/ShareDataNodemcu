@@ -241,7 +241,7 @@ void loop() {
 ### adafruit_21_read_feed
 Upload the second code to the other nodemcu
 
-```C
+```C++
 #include "config.h"
 
 #define FEED_OWNER "feedowner"
