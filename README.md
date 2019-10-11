@@ -164,14 +164,12 @@ change feed owner and define the shared_feed
 ```C
 #define FEED_OWNER "feedowner"
 #define SHARED_FEED "counter"
-}
 ```
 Also change this for this.
 ```C
 AdafruitIO_Feed *sharedFeed = io.feed("counter", FEED_OWNER);
 
 AdafruitIO_Feed *sharedFeed = io.feed(SHARED_FEED, FEED_OWNER);
-}
 ```
 
 You should left with something that look like this:
@@ -212,9 +210,128 @@ void handleMessage(AdafruitIO_Data *data) {
   Serial.print("received <-  ");
   Serial.println(data->toInt());
 }
+```
+
+### Final codes
+
+#### Adafruitio_00_publish
+
+```C
+#include "config.h"
+
+int count = 0;
+AdafruitIO_Feed *counter = io.feed("counter");
+
+void setup() {
+
+  Serial.begin(115200);
+
+  while(! Serial);
+  Serial.print("Connecting to Adafruit IO");
+
+  io.connect();
+
+  while(io.status() < AIO_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+  
+  Serial.println();
+  Serial.println(io.statusText());
+}
+
+void loop() {
+  io.run();
+
+  Serial.print("sending -> ");
+  Serial.println(count);
+  counter->save(count);
+  count++;
+  
+  delay(3000);
 }
 ```
 
+#### adafruit_21_read_feed
+Upload the second code to the other nodemcu
+
+```C
+#include "config.h"
+
+#define FEED_OWNER "feedowner"
+#define SHARED_FEED "counter"
+
+AdafruitIO_Feed *sharedFeed = io.feed(SHARED_FEED, FEED_OWNER);
+
+
+void setup() {
+  Serial.begin(115200);
+  
+  while(! Serial);
+  Serial.print("Connecting to Adafruit IO");
+  
+  io.connect();
+  sharedFeed->onMessage(handleMessage);
+  
+  while(io.status() < AIO_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println();
+  Serial.println(io.statusText());
+  sharedFeed->get();
+}
+
+void loop() {
+  io.run();
+}
+
+void handleMessage(AdafruitIO_Data *data) {
+  Serial.print("received <-  ");
+  Serial.println(data->toInt());
+}
+```
+#### config.h
+
+```C
+#define IO_USERNAME  "xtrack"
+#define IO_KEY       "1d15c2dd456f46e5835744de96e4eee7"
+
+#define WIFI_SSID   "IOT"
+#define WIFI_PASS   "!HVAIOT!"
+
+#include "AdafruitIO_WiFi.h"
+
+#if defined(USE_AIRLIFT) || defined(ADAFRUIT_METRO_M4_AIRLIFT_LITE)
+  #if !defined(SPIWIFI_SS) // if the wifi definition isnt in the board variant
+    #define SPIWIFI SPI
+    #define SPIWIFI_SS 10  // Chip select pin
+    #define NINA_ACK 9    // a.k.a BUSY or READY pin
+    #define NINA_RESETN 6 // Reset pin
+    #define NINA_GPIO0 -1 // Not connected
+  #endif
+  AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS, SPIWIFI_SS, NINA_ACK, NINA_RESETN, NINA_GPIO0, &SPIWIFI);
+#else
+  AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
+#endif
+```
+
+### TESTING
+
+1. Put the first nodemcu (publish) in a powersource other than your laptop.
+2. Put the second nodemcu (feed reader) in your laptop port.
+3. Check your serial monitor and you see that you recive data from an other nodemcu.
+
+check your adafruit feed, you should see something like this.
+Inline-style: 
+![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/recived.png "Logo Title Text 1")
+`Note: if it doesn't work look though the previous steps and look for things you missed`
+
+
 ## Authors
+
+For questions you can contact me:
+marc-heemskerk@hotmail.nl
 
 * **Marc Heemskerk** - [Marc Heemskerk](https://github.com/X-Track)
