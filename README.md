@@ -7,14 +7,10 @@ A manual how to connect data from 1 nodemcu with other nodemcu's with Wifi and A
 ## Hardware Required
 
 • 2x* nodemcu  
-• 1x LDR / photoresistor  
-• 10k ohm resistor  
-• Breadboard  
 • Micro USB cable  
-• Connecting Wires  
+• Powerbank/ External powersource
 
 *You can have multiple nodemcu's but for this example I use just 2.
-
 
 
 ### Software Required
@@ -58,10 +54,10 @@ Adafruit IO Arduino by:Adafruit
 (latest version)
 ```
 
-
-### Adafruit Feed
+### Adafruit Create New Feed
 Go to you dashboard
 Create a nieuw feed and name it "counter"
+
 
 
 ### Coding Time
@@ -110,24 +106,23 @@ You should left something with this of you are on wifi:
 }
 ```
 
-#### Sent data to Adafruit
+### Sent data to Adafruit
 
 Navigate back to the first tab Adafruitio_00_publish.
 You can leave everything there and upload it to you nodemcu to test.
 
 If you did the previouse steps correct you should see this in the serial monitor:
 
-Inline-style: 
+Sending data to adafruit in serialmonitor: 
 ![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/serialmonitor.png "Logo Title Text 1")
 `Note: make sure your serial monitor is on 115200`
 
 
 check your adafruit feed, you should see something like this.
-Inline-style: 
 ![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/adafruit.png "Logo Title Text 1")
 `Note: if it doesn't work look though the previous steps and look for things you missed`
 
-#### Read data from Adafruit
+### Read data from Adafruit
 
 Open File --> Exampels --> Adafruit IO Arduino --> adafruit_21_read_feed
 
@@ -165,10 +160,12 @@ change feed owner and define the shared_feed
 #define FEED_OWNER "feedowner"
 #define SHARED_FEED "counter"
 ```
-Also change this for this.
+Also change this.
 ```C
 AdafruitIO_Feed *sharedFeed = io.feed("counter", FEED_OWNER);
-
+```
+For this.
+```C
 AdafruitIO_Feed *sharedFeed = io.feed(SHARED_FEED, FEED_OWNER);
 ```
 
@@ -212,9 +209,9 @@ void handleMessage(AdafruitIO_Data *data) {
 }
 ```
 
-### Final codes
+## Final codes
 
-#### Adafruitio_00_publish
+### Adafruitio_00_publish
 
 ```C
 #include "config.h"
@@ -252,7 +249,7 @@ void loop() {
 }
 ```
 
-#### adafruit_21_read_feed
+### adafruit_21_read_feed
 Upload the second code to the other nodemcu
 
 ```C
@@ -292,14 +289,14 @@ void handleMessage(AdafruitIO_Data *data) {
   Serial.println(data->toInt());
 }
 ```
-#### config.h
+### config.h
 
 ```C
-#define IO_USERNAME  "xtrack"
-#define IO_KEY       "1d15c2dd456f46e5835744de96e4eee7"
+#define IO_USERNAME  "your_username"
+#define IO_KEY       "your_key"
 
-#define WIFI_SSID   "IOT"
-#define WIFI_PASS   "!HVAIOT!"
+#define WIFI_SSID   "your_ssid"
+#define WIFI_PASS   "your_pass"
 
 #include "AdafruitIO_WiFi.h"
 
