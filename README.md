@@ -1,6 +1,6 @@
 # Share Data Between Nodemcu's
 
-A manual how to connect data from 1 nodemcu with other nodemcu's with Wifi and Adafruit.
+This is a manual how you can sent data from nodemcu to nodemcu with adafruit feeds.
 
 
 
