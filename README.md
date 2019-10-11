@@ -68,30 +68,66 @@ We need to connect the led's to the nodemcu's
 connect you LDR to your nodemcu
 ```
 The LDR output is actually analog in nature, so it gets connected to the A0 pin of the NodeMCU.
+![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/wire.jpg "Connection LDR Nodemcu")
 
-Inline-style: 
-![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/wire.jpg "Logo Title Text 1")
 
+### Adafruit Feed
+Go to you dashboard
+Create a nieuw feed and name it "counter"
 
 
 ### Coding Time
 
+#### Setup Config.h
+
+Open File --> Exampels --> Adafruit IO Arduino --> adafruit_00_publish
+
+In the file navigate to the second tab named: config.h
+
+Change this section to your own information form adafruit
 ```C
-void setup() {
-	Serial.begin(9600);   // initialize serial communication at 9600 BPS
+#define IO_USERNAME   "your_username"
+#define IO_KEY        "your_key"
+```
+
+change this information to your own WIFI information
+```C
+#define WIFI_SSID   "your_ssid"
+#define WIFI_PASS   "your_pass"
 }
 ```
+
+You should left something with this of you are on wifi:
 ```C
-void loop() {
+#define IO_USERNAME   "your_username"
+#define IO_KEY        "your_key"
 
-	int sensorValue = analogRead(A0);   // read the input on analog pin 0
+#define WIFI_SSID   "your_ssid"
+#define WIFI_PASS   "your_pass"
 
-	float voltage = sensorValue * (5.0 / 1023.0);   // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V)
+#include "AdafruitIO_WiFi.h"
 
-	Serial.println(voltage);   // print out the value you read
-
+#if defined(USE_AIRLIFT) || defined(ADAFRUIT_METRO_M4_AIRLIFT_LITE)
+  #if !defined(SPIWIFI_SS) // if the wifi definition isnt in the board variant
+    #define SPIWIFI SPI
+    #define SPIWIFI_SS 10  // Chip select pin
+    #define NINA_ACK 9    // a.k.a BUSY or READY pin
+    #define NINA_RESETN 6 // Reset pin
+    #define NINA_GPIO0 -1 // Not connected
+  #endif
+  AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS, SPIWIFI_SS, NINA_ACK, NINA_RESETN, NINA_GPIO0, &SPIWIFI);
+#else
+  AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
+#endif
 }
 ```
+
+#### Sent data to Adafruit
+
+Navigate back to the first tab Adafruitio_00_publish.
+You can leave everything there and upload it to you nodemcu to test.
+
+
 
 
 
