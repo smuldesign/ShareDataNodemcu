@@ -59,18 +59,6 @@ Adafruit IO Arduino by:Adafruit
 ```
 
 
-### Circuit Connections
-
-We need to connect the led's to the nodemcu's
-
-
-```
-connect you LDR to your nodemcu
-```
-The LDR output is actually analog in nature, so it gets connected to the A0 pin of the NodeMCU.
-![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/wire.jpg "Connection LDR Nodemcu")
-
-
 ### Adafruit Feed
 Go to you dashboard
 Create a nieuw feed and name it "counter"
