@@ -326,9 +326,12 @@ Inline-style:
 `Note: if it doesn't work look though the previous steps and look for things you missed`
 
 
-## Authors
-
+## Questions
 For questions you can contact me:
 marc-heemskerk@hotmail.nl
+
+
+
+## Authors
 
 * **Marc Heemskerk** - [Marc Heemskerk](https://github.com/X-Track)
