@@ -70,7 +70,7 @@ connect you LDR to your nodemcu
 The LDR output is actually analog in nature, so it gets connected to the A0 pin of the NodeMCU.
 
 Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/wire.jpg "Logo Title Text 1")
 
 
 
