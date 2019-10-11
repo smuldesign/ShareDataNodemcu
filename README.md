@@ -3,6 +3,7 @@
 A manual how to connect data from 1 nodemcu with other nodemcu's with Wifi and Adafruit.
 
 
+
 ## Hardware Required
 
 2x* nodemcu
@@ -14,12 +15,15 @@ Connecting Wires
 
 *You can have multiple nodemcu's but for this example i use just 2.
 
+
+
 ### Software Required
 
 ```
 Arduino IDE (with ESP8266 Library installed)
 
 ```
+
 [Arduino IDE](https://www.arduino.cc/en/main/software)
 [ESP8266 Library](http://arduino.esp8266.com/stable/package_esp8266com_index.json)
 
@@ -32,7 +36,9 @@ What things you need to install the software and how to install them:
 For this project you will need an adafruit io account.
 https://io.adafruit.com
 ```
-[adafruit](https://io.adafruit.com)
+
+[Adafruit](https://io.adafruit.com)
+
 ```
 Get your AIO Key (right upper corner on adafruitio dashboard).
 ```
@@ -65,6 +71,8 @@ connect you LDR to your nodemcu
 
 The LDR output is actually analog in nature, so it gets connected to the A0 pin of the NodeMCU.
 
+
+
 ### Coding Time
 
 ```C
@@ -88,4 +96,4 @@ void loop() {
 
 ## Authors
 
-* **Marc Heemskerk** - [MarcHeemskerk](https://github.com/X-Track)
+* **Marc Heemskerk** - [Marc Heemskerk](https://github.com/X-Track)
