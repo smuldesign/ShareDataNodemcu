@@ -325,7 +325,7 @@ void handleMessage(AdafruitIO_Data *data) {
 
 check your adafruit feed, you should see something like this.
 Inline-style: 
-![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/recived.png "Logo Title Text 1")
+![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/reviced.png "Logo Title Text 1")
 `Note: if it doesn't work look though the previous steps and look for things you missed`
 
 
