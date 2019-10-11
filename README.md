@@ -28,7 +28,7 @@ Arduino IDE (with ESP8266 Library installed)
 
 What things you need to install the software and how to install them:
 
-* For this project you will need an adafruit io account.
+* For this project you will need an adafruit io account.   
 [Adafruit](https://io.adafruit.com)
 
 * Get your AIO Key (right upper corner on adafruitio dashboard).
