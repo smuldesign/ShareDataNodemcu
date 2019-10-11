@@ -320,6 +320,10 @@ void handleMessage(AdafruitIO_Data *data) {
 2. Put the second nodemcu (feed reader) in your laptop port.
 3. Check your serial monitor and you see that you recive data from an other nodemcu.
 
+
+Sending data to adafruit in serialmonitor: 
+![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/serialmonitor.png "Logo Title Text 1")
+`Note: make sure your serial monitor is on 115200`
 check your adafruit feed, you should see something like this.
 ![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/reviced.png "Logo Title Text 1")
 `Note: if it doesn't work look though the previous steps and look for things you missed`
