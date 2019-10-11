@@ -331,10 +331,10 @@ check your adafruit feed, you should see something like this.
 
 ## Questions
 For questions you can contact me:
-marc-heemskerk@hotmail.nl
+thisisfakegmail@gmail.com
 
 
 
-## Authors
+## Author
 
 * **Marc Heemskerk** - [Marc Heemskerk](https://github.com/X-Track)
