@@ -21,7 +21,6 @@ Connecting Wires
 
 ```
 Arduino IDE (with ESP8266 Library installed)
-
 ```
 
 [Arduino IDE](https://www.arduino.cc/en/main/software)
