@@ -1,4 +1,4 @@
-# sharedatanodemcu
+# share data between nodemcu's
 
 A manual how to connect data from 1 nodemcu with other nodemcu's with Wifi and Adafruit.
 
@@ -125,7 +125,95 @@ Inline-style:
 check your adafruit feed, you should see something like this.
 Inline-style: 
 ![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/adafruit.png "Logo Title Text 1")
+`Note: if it doesn't work look though the previous steps and look for things you missed`
 
+#### Read data from Adafruit
+
+Open File --> Exampels --> Adafruit IO Arduino --> adafruit_21_read_feed
+
+Navigate to the config.h
+This config is a copy of the config form the Adafruitio_00_publish example.
+copy and past it and change the varribles to your own.
+```C
+#define IO_USERNAME   "your_username"
+#define IO_KEY        "your_key"
+
+#define WIFI_SSID   "your_ssid"
+#define WIFI_PASS   "your_pass"
+
+#include "AdafruitIO_WiFi.h"
+
+#if defined(USE_AIRLIFT) || defined(ADAFRUIT_METRO_M4_AIRLIFT_LITE)
+  #if !defined(SPIWIFI_SS) // if the wifi definition isnt in the board variant
+    #define SPIWIFI SPI
+    #define SPIWIFI_SS 10  // Chip select pin
+    #define NINA_ACK 9    // a.k.a BUSY or READY pin
+    #define NINA_RESETN 6 // Reset pin
+    #define NINA_GPIO0 -1 // Not connected
+  #endif
+  AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS, SPIWIFI_SS, NINA_ACK, NINA_RESETN, NINA_GPIO0, &SPIWIFI);
+#else
+  AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
+#endif
+}
+```
+Navigate back to the first tab adafruit_21_read_feed.
+
+change feed owner and define the shared_feed
+
+```C
+#define FEED_OWNER "feedowner"
+#define SHARED_FEED "counter"
+}
+```
+Also change this for this.
+```C
+AdafruitIO_Feed *sharedFeed = io.feed("counter", FEED_OWNER);
+
+AdafruitIO_Feed *sharedFeed = io.feed(SHARED_FEED, FEED_OWNER);
+}
+```
+
+You should left with something that look like this:
+
+```C
+#include "config.h"
+
+#define FEED_OWNER "feedowner"
+#define SHARED_FEED "counter"
+
+AdafruitIO_Feed *sharedFeed = io.feed(SHARED_FEED, FEED_OWNER);
+
+
+void setup() {
+  Serial.begin(115200);
+  
+  while(! Serial);
+  Serial.print("Connecting to Adafruit IO");
+  
+  io.connect();
+  sharedFeed->onMessage(handleMessage);
+  
+  while(io.status() < AIO_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println();
+  Serial.println(io.statusText());
+  sharedFeed->get();
+}
+
+void loop() {
+  io.run();
+}
+
+void handleMessage(AdafruitIO_Data *data) {
+  Serial.print("received <-  ");
+  Serial.println(data->toInt());
+}
+}
+```
 
 ## Authors
 
