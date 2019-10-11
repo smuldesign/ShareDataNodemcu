@@ -51,7 +51,7 @@ Go to you dashboard
 Create a nieuw feed and name it "counter"
 
 
-### Coding Time
+## Coding Time
 
 #### Setup Config.h
 
