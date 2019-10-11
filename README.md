@@ -6,12 +6,12 @@ A manual how to connect data from 1 nodemcu with other nodemcu's with Wifi and A
 
 ## Hardware Required
 
-2x* nodemcu
-1x LDR / photoresistor
-10k ohm resistor
-Breadboard
-Micro USB cable
-Connecting Wires
+• 2x* nodemcu  
+• 1x LDR / photoresistor  
+• 10k ohm resistor  
+• Breadboard  
+• Micro USB cable  
+• Connecting Wires  
 
 *You can have multiple nodemcu's but for this example i use just 2.
 
