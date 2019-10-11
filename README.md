@@ -1,4 +1,4 @@
-# share data between nodemcu's
+# Share Data Between Nodemcu's
 
 A manual how to connect data from 1 nodemcu with other nodemcu's with Wifi and Adafruit.
 
@@ -314,7 +314,7 @@ void handleMessage(AdafruitIO_Data *data) {
 #endif
 ```
 
-### TESTING
+### Testing
 
 1. Put the first nodemcu (publish) in a powersource other than your laptop.
 2. Put the second nodemcu (feed reader) in your laptop port.
