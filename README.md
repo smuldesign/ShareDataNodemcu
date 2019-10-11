@@ -13,7 +13,7 @@ A manual how to connect data from 1 nodemcu with other nodemcu's with Wifi and A
 • Micro USB cable  
 • Connecting Wires  
 
-*You can have multiple nodemcu's but for this example i use just 2.
+*You can have multiple nodemcu's but for this example I use just 2.
 
 
 
@@ -115,8 +115,16 @@ You should left something with this of you are on wifi:
 Navigate back to the first tab Adafruitio_00_publish.
 You can leave everything there and upload it to you nodemcu to test.
 
+If you did the previouse steps correct you should see this in the serial monitor:
+
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+`Note: make sure your serial monitor is on 115200`
 
 
+check your adafruit feed, you should see something like this.
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 
 ## Authors
