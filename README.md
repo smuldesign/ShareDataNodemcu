@@ -320,6 +320,8 @@ check your adafruit feed, you should see something like this.
 ![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/reviced.png "Logo Title Text 1")
 `Note: if it doesn't work look though the previous steps and look for things you missed`
 
+## Questions
+Feel free to download the [repository](https://github.com/smuldesign/ShareDataNodemcu/archive/master.zip)
 
 ## Questions
 For questions you can contact me:
