@@ -36,10 +36,10 @@ What things you need to install the software and how to install them:
 
 
 ### Arduino libaries
-
+```
 Open up arduino go to Sketch --> Include libary --> Manage Libaries
 (Shift + CMD + I)
-
+```
 And search for the following libaries:
 
 * Adafruit IO Arduino by:Adafruit
@@ -47,7 +47,9 @@ And search for the following libaries:
 
 
 ### Adafruit Create New Feed
-Go to you dashboard
+```
+Go to you Dashboard --> Feeds --> Action --> Create new feed
+```
 Create a nieuw feed and name it "counter"
 
 
