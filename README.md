@@ -54,6 +54,7 @@ Create a nieuw feed and name it "counter"
 
 
 ## Coding Time
+### Open arduino
 
 #### Setup Config.h
 
