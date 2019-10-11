@@ -43,7 +43,7 @@ Open up arduino go to Sketch --> Include libary --> Manage Libaries
 And search for the following libaries:
 
 * Adafruit IO Arduino by:Adafruit   
-(latest version)[latest version](https://github.com/adafruit/Adafruit_IO_Arduino)
+[(latest version)](https://github.com/adafruit/Adafruit_IO_Arduino)
 
 
 ### Adafruit Create New Feed
