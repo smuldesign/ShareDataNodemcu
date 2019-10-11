@@ -6,9 +6,9 @@ This is a manual how you can sent data from nodemcu to nodemcu with adafruit fee
 
 ## Hardware Required
 
-• 2x* nodemcu  
-• Micro USB cable  
-• Powerbank/ External powersource
+* 2x* nodemcu  
+* Micro USB cable  
+* Powerbank/ External powersource
 
 *You can have multiple nodemcu's but for this example I use just 2.
 
@@ -27,18 +27,12 @@ Arduino IDE (with ESP8266 Library installed)
 ### Prerequisites
 
 What things you need to install the software and how to install them:
-```
-For this project you will need an adafruit io account.
-```
 
+* For this project you will need an adafruit io account.
 [Adafruit](https://io.adafruit.com)
 
-```
-Get your AIO Key (right upper corner on adafruitio dashboard).
-```
-```
-Get you Wifi SSID and PASSWORD ready.
-```
+* Get your AIO Key (right upper corner on adafruitio dashboard).
+* Get you Wifi SSID and PASSWORD ready.
 
 
 ### Arduino libaries
@@ -48,15 +42,13 @@ Open up arduino go to Sketch --> Include libary --> Manage Libaries
 
 And search for the following libaries:
 
-```
-Adafruit IO Arduino by:Adafruit
+* Adafruit IO Arduino by:Adafruit
 (latest version)
-```
+
 
 ### Adafruit Create New Feed
 Go to you dashboard
 Create a nieuw feed and name it "counter"
-
 
 
 ### Coding Time
