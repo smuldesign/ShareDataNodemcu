@@ -77,7 +77,6 @@ change this information to your own WIFI information
 ```C
 #define WIFI_SSID   "your_ssid"
 #define WIFI_PASS   "your_pass"
-}
 ```
 You can delete the FONA and ETHERNET sections because we work with WIFI.
 You should left something with this of you are on wifi:
@@ -102,7 +101,6 @@ You should left something with this of you are on wifi:
 #else
   AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
 #endif
-}
 ```
 
 ### Sent data to Adafruit
