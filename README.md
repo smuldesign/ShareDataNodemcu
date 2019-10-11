@@ -321,7 +321,6 @@ void handleMessage(AdafruitIO_Data *data) {
 3. Check your serial monitor and you see that you recive data from an other nodemcu.
 
 check your adafruit feed, you should see something like this.
-Inline-style: 
 ![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/reviced.png "Logo Title Text 1")
 `Note: if it doesn't work look though the previous steps and look for things you missed`
 
