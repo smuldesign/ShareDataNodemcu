@@ -84,7 +84,7 @@ change this information to your own WIFI information
 #define WIFI_PASS   "your_pass"
 }
 ```
-
+You can delete the FONA and ETHERNET sections because we work with WIFI.
 You should left something with this of you are on wifi:
 ```C
 #define IO_USERNAME   "your_username"
