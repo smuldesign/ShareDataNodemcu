@@ -31,10 +31,12 @@ What things you need to install the software and how to install them:
 * For this project you will need an adafruit io account.   
 [Adafruit](https://io.adafruit.com)
 
-* Get your AIO Key (right upper corner on adafruitio dashboard).
-* Get you Wifi SSID and PASSWORD ready.
+* Get your AIO Key.
+(right upper corner on adafruitio dashboard)   
 
-
+* Get you Wifi SSID and PASSWORD ready.   
+  
+  
 ### Arduino libaries
 ```
 Open up arduino go to Sketch --> Include libary --> Manage Libaries
