@@ -42,7 +42,7 @@ What things you need to install the software and how to install them:
 Open up arduino go to Sketch --> Include libary --> Manage Libaries
 (Shift + CMD + I)
 ```
-And search for the following libaries:
+And search for the following libary:
 
 * Adafruit IO Arduino   
 [(latest version by: Adafruit)](https://github.com/adafruit/Adafruit_IO_Arduino)
@@ -50,9 +50,17 @@ And search for the following libaries:
 ```
 Arduino --> Preferences... --> Additional Boards Manager URL's 
 (CMD + ,)
-
-Past this link: http://arduino.esp8266.com/stable/package_esp8266com_index.json
 ```
+Past in this link: http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
+```
+Tools --> Board --> Boards Manager...
+```
+And search for the following libary:
+
+* ESP8266 
+latest version by: esp8266 community
+
 
 ### Adafruit Create New Feed
 ```
