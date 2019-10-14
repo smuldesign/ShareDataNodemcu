@@ -330,7 +330,7 @@ void handleMessage(AdafruitIO_Data *data) {
 4. Check your serial monitor and you see that you recive data from an other nodemcu.
 
 
-Sending data to adafruit in serialmonitor: 
+Sending data to adafruit (serial monitor view)
 ![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/serialmonitor.png "Logo Title Text 1")
 `Note: make sure your serial monitor is on 115200`
 ![alt text](https://github.com/smuldesign/sharedatanodemcu/blob/master/images/reviced.png "Logo Title Text 1")
