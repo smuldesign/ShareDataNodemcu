@@ -46,7 +46,13 @@ And search for the following libaries:
 
 * Adafruit IO Arduino   
 [(latest version by: Adafruit)](https://github.com/adafruit/Adafruit_IO_Arduino)
-   
+
+```
+Arduino --> Preferences... --> Additional Boards Manager URL's 
+(CMD + ,)
+
+Past this link: http://arduino.esp8266.com/stable/package_esp8266com_index.json
+```
 
 ### Adafruit Create New Feed
 ```
