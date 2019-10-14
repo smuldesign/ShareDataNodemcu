@@ -58,7 +58,7 @@ Tools --> Board --> Boards Manager...
 ```
 And search for the following libary:
 
-* ESP8266 
+* ESP8266    
 latest version by: esp8266 community
 
 
