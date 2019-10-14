@@ -101,12 +101,12 @@ You should left something with this of you are on wifi:
 #include "AdafruitIO_WiFi.h"
 
 #if defined(USE_AIRLIFT) || defined(ADAFRUIT_METRO_M4_AIRLIFT_LITE)
-  #if !defined(SPIWIFI_SS) // if the wifi definition isnt in the board variant
+  #if !defined(SPIWIFI_SS) 
     #define SPIWIFI SPI
-    #define SPIWIFI_SS 10  // Chip select pin
-    #define NINA_ACK 9    // a.k.a BUSY or READY pin
-    #define NINA_RESETN 6 // Reset pin
-    #define NINA_GPIO0 -1 // Not connected
+    #define SPIWIFI_SS 10 
+    #define NINA_ACK 9   
+    #define NINA_RESETN 6
+    #define NINA_GPIO0 -1 
   #endif
   AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS, SPIWIFI_SS, NINA_ACK, NINA_RESETN, NINA_GPIO0, &SPIWIFI);
 #else
@@ -147,12 +147,12 @@ copy and past it and change the varribles to your own.
 #include "AdafruitIO_WiFi.h"
 
 #if defined(USE_AIRLIFT) || defined(ADAFRUIT_METRO_M4_AIRLIFT_LITE)
-  #if !defined(SPIWIFI_SS) // if the wifi definition isnt in the board variant
+  #if !defined(SPIWIFI_SS) 
     #define SPIWIFI SPI
-    #define SPIWIFI_SS 10  // Chip select pin
-    #define NINA_ACK 9    // a.k.a BUSY or READY pin
-    #define NINA_RESETN 6 // Reset pin
-    #define NINA_GPIO0 -1 // Not connected
+    #define SPIWIFI_SS 10 
+    #define NINA_ACK 9    
+    #define NINA_RESETN 6 
+    #define NINA_GPIO0 -1
   #endif
   AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS, SPIWIFI_SS, NINA_ACK, NINA_RESETN, NINA_GPIO0, &SPIWIFI);
 #else
@@ -309,12 +309,12 @@ void handleMessage(AdafruitIO_Data *data) {
 #include "AdafruitIO_WiFi.h"
 
 #if defined(USE_AIRLIFT) || defined(ADAFRUIT_METRO_M4_AIRLIFT_LITE)
-  #if !defined(SPIWIFI_SS) // if the wifi definition isnt in the board variant
+  #if !defined(SPIWIFI_SS) 
     #define SPIWIFI SPI
-    #define SPIWIFI_SS 10  // Chip select pin
-    #define NINA_ACK 9    // a.k.a BUSY or READY pin
-    #define NINA_RESETN 6 // Reset pin
-    #define NINA_GPIO0 -1 // Not connected
+    #define SPIWIFI_SS 10  
+    #define NINA_ACK 9   
+    #define NINA_RESETN 6 
+    #define NINA_GPIO0 -1 
   #endif
   AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS, SPIWIFI_SS, NINA_ACK, NINA_RESETN, NINA_GPIO0, &SPIWIFI);
 #else
