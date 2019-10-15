@@ -339,6 +339,11 @@ Sending data to adafruit (serial monitor view)
 ## Download
 Feel free to download the [repository](https://github.com/smuldesign/ShareDataNodemcu/archive/master.zip)
 
+## Posibilities are endless
+This example is just basic but you can make huge things with this. Just think about you have a uncle on the otherside of the world. You give him an nodemcu with a lightsensor. You can now get the value's of that node mcu at your home.
+
+Also you can get different nodemcu's working like an chain. You can activate 1 nodemcu by pressing an button on the other one. Its really amazing right? :D
+
 
 ## Author
 
